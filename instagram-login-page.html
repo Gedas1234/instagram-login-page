@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            width: 350px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #262626;
+            margin-bottom: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #3897f0;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3897f0;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-button:hover {
+            background-color: #3578e5;
+        }
+        .forgot-password {
+            font-size: 12px;
+            color: #3897f0;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .divider {
+            margin: 20px 0;
+            position: relative;
+        }
+        .divider::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #dbdbdb;
+            top: 50%;
+            left: 0;
+        }
+        .divider span {
+            background-color: white;
+            padding: 0 10px;
+            font-size: 14px;
+            color: #999;
+        }
+        .sign-up-link {
+            font-size: 14px;
+            color: #3897f0;
+            text-decoration: none;
+        }
+        .sign-up-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Instagram Logo -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram Logo" class="logo">
+        
+        <!-- Login Form -->
+        <h1>Instagram</h1>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <input type="text" id="username" class="input-field" placeholder="Username" required><br>
+            <input type="password" id="password" class="input-field" placeholder="Password" required><br>
+            
+            <!-- Login Button -->
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+        
+        <!-- Forgot Password Link -->
+        <a href="#" class="forgot-password" onclick="forgotPassword()">Forgot Password?</a>
+        
+        <!-- Divider for Sign Up -->
+        <div class="divider"><span>OR</span></div>
+        
+        <!-- Sign Up Link -->
+        <a href="#" class="sign-up-link">Don't have an account? Sign up</a>
+    </div>
+
+    <script>
+        // Function to validate the login form (basic validation)
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                alert("Please fill out both fields.");
+                return false;
+            }
+
+            // Simulate a login success
+            alert("Login successful!");
+            return false;  // Prevent page reload (for demo purposes)
+        }
+
+        // Function to handle "Forgot Password" click
+        function forgotPassword() {
+            alert("Redirecting to password recovery page...");
+            // You can replace the alert with actual redirection to a password recovery page
+        }
+    </script>
+</body>
+</html>
